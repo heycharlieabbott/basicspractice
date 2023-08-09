@@ -19,7 +19,7 @@ const usePromiseFetch = ({url, seed}: Props) => {
             setWords(json.title)
             setWordArray(json.title.split(' '))
 
-        })
+        }).catch((e)=>console.log(e))
         
 
     },[seed])
