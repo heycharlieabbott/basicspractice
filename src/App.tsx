@@ -1,29 +1,14 @@
-import { useState, useEffect } from 'react'
 import './App.css'
-import useAsyncFetch from './hooks/useAsyncFetch';
-import usePromiseFetch from './hooks/usePromiseFetch';
+import ButtonGenerator from './components/ButtonGenerator'
+import Accordion from './components/Accordion'
 
 function App() {
 
-  const [randomizer, setRandomizer] = useState(1);
 
-  const randomize = () =>{
-    setRandomizer(randomizer + 1);
-  }
-
-//const {words, wordArray} = useAsyncFetch({url: `https://jsonplaceholder.typicode.com/posts/`, seed: randomizer});
-const {words, wordArray} = usePromiseFetch({url: `https://jsonplaceholder.typicode.com/posts/`, seed: randomizer});
-
-const items = wordArray.filter((f : string) => f.includes('l')).map((i) => <div> {i}</div>)
 
   return (
     <>
-      <button onClick={() =>
-        randomize()}>
-      {words}
-      </button>
-      {items}
-      
+    <Accordion/>
     </>
   )
 }
