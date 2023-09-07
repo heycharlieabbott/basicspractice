@@ -12,14 +12,28 @@ const usePromiseFetch = ({url, seed}: Props) => {
 
     useEffect(()=>{
 
-        fetch(url + seed)
-        .then((res) => res.json())
-        .then((json)=>{
+        // fetch(url + seed)
+        // .then((res) => res.json())
+        // .then((json)=>{
 
+        //     setWords(json.title)
+        //     setWordArray(json.title.split(' '))
+
+        // }).catch((e)=>console.log(e))
+
+        // fetch(url + seed)
+        // .then((res)=>res.json())
+        // .then((json)=>{
+        //     setWords(json.title)
+        //     setWordArray(json.title.split(' '))
+        // }).catch((e) => console.log(e))
+
+        fetch(url + seed)
+        .then((res)=>res.json())
+        .then((json) => {
             setWords(json.title)
             setWordArray(json.title.split(' '))
-
-        }).catch((e)=>console.log(e))
+        }).catch((e) => console.log(e))
         
 
     },[seed])
